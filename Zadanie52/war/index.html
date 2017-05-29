@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+ <html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>Мультфильм</title>
+ 
+ <style>
+ body {
+ 	color:#006666;
+  	font-family: Helvetica, Arial, sans-serif;
+  	font-size: 18pt;
+  	background: url(gift_paper_Pattern.jpg);
+  }
+  
+  .content {
+  
+  	width:700px;
+  	margin:10px auto;
+  }
+  
+  h1 {
+  	padding:10px;
+  	margin-bottom: 0px;
+  }
+  
+  h6 {
+  	margin:0;
+  	text-align: center;
+  }
+  
+  h6 a {
+  	font-style:italic;
+  	font-weight: normal;
+  	font-size: 15px;
+  }
+  
+  .task {
+  	padding:10px;
+  }
+  
+  form {
+  
+  	padding:20px;
+  	width:100%;
+  	border:10px solid #fc3;
+  	
+  }
+  
+  select {
+  
+  	font-size: 20pt;
+  }
+  input[type="text"] {
+ 	padding:10px;
+ 	font-size: 18pt;
+ 	width:50px;
+ }
+  
+    
+  #check {
+  
+  	width:300px;
+  	font-size: 20px;
+  	height:60px;
+  	margin:10px auto;
+  }
+  
+  .success ul li {
+  
+  	list-style: none;
+  }
+  
+  .holod {
+  	text-decoration: underline;
+  	font-style: italic;
+  }
+  
+  .well {
+  	color: #006666;
+  	
+  	padding-left: 40 px;
+  }
+  
+  .bad {
+  	color: #f00;
+  	padding-left: 30px;
+  }
+  
+  </style>
+ 
+ <script src="jquery-3.2.1.js"></script>
+ <script>
+  	$(function() {
+  		$('#check').click(function() {
+  			var genre = $('#genre').val();
+  			var death = $('#death').val();
+  			var quantity = $('#quantity').val();
+  			var role = $('#role').val();
+  			
+  			
+  			
+  			$('#result').load("/zadanie52?genre="+genre+"&death="+death+"&quantity="+quantity+"&role="+role);
+  		});
+  	});
+  </script>
+  </head>
+  <body>
+  
+  <div class="content">
+  <h1>Какой мультфильм вам наиболее подходит?</h1>
+  Из трех (ссылки на кинопоиск)<br> 
+  <a href="https://www.kinopoisk.ru/film/2360/"> Король лев</a><br> 
+  <a href="https://www.kinopoisk.ru/film/408395/"> Франкенвини</a><br> 
+ <a href="https://www.kinopoisk.ru/film/29573/"> Все псы попадают в рай</a>
+ 
+ <br><br> <div class="task">Выберите критерии мультфильма</div>
+  
+  <form>
+  	Выберите жанр:
+  	<select id="genre">
+  		<option value="-">не выбран</option>
+  		<option value="фентези">фентези</option>
+  		<option value="драма">драма</option>
+  		<option value="ужасы">ужасы</option>
+  	</select>
+  	
+  	<p>Хотите, чтобы в этом мультике кто-то умер? 
+  	
+  	<select id="death">
+  		<option value="-">не выбран</option>
+  		<option value="правда">да</option>
+  		<option value="ложь">нет</option>
+  		  	</select>
+  		<br>
+      	</p>
+  	Какие герои там должны присутствовать?:
+  	<select id="role">
+  		<option value="-">не выбран</option>
+  		<option value="львы">львы</option>
+  		<option value="собаки">собаки</option>
+  		<option value="монстры">монстры</option>
+  		<option value="люди">люди</option>
+  	</select>
+  	
+ 
+  
+  <p> Сколько главных героев должно быть в мультфильме?  
+  
+  	
+    <input type="text" id="quantity" value="-">     </p>
+  </form>
+  
+  <button id="check">Проверить!</button>
+  
+  <p>Результат:</p>
+  
+  <div id="result"><i>после нажатия на кнопку, появится тут</i></div>
+  
+  </div>
+  </body>
+  </html> 
